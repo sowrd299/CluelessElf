@@ -8,41 +8,38 @@ public class DashMovement : MonoBehaviour {
     public float dashspeed;
     private float dashTime;
     public float startDashTime;
-    private int direction;
+    private bool direction;
     public int dashCounter;
     public float timer;
+    Vector2 mdirection;
 
 
-	void Start () {
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
         dashTime = startDashTime;
         dashCounter = 0;
-
     }
 	
 
 	void Update () {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        Vector2 mdirection = new Vector2(moveX, moveY);
 
-
-
-
-        if (dashCounter <= 3) {
-            if (direction == 0)
+        if (true) {
+            if (direction == false)
             {
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                if (Input.GetKeyDown(KeyCode.LeftShift) && dashCounter < 3)
                 {
-                    direction = 1;
+                    direction = true;
                     dashCounter += 1;
+                    mdirection = new Vector2(moveX, moveY);
                 }
             }
             else
             {
                 if (dashTime <= 0)
                 {
-                    direction = 0;
+                    direction = false;
                     dashTime = startDashTime;
                     rb.velocity = Vector2.zero;
                 }
@@ -50,7 +47,7 @@ public class DashMovement : MonoBehaviour {
                 {
                     dashTime -= Time.deltaTime;
 
-                    if (direction == 1)
+                    if (direction == true)
                     {
                         rb.velocity = mdirection * dashspeed;
                     }
