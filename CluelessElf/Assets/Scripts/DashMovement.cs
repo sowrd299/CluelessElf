@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,32 +22,6 @@ public class DashMovement : MonoBehaviour {
 	
 
 	void Update () {
-=======
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DashMovement : MonoBehaviour {
-
-    private Rigidbody2D rb;
-    public float dashspeed;
-    private float dashTime;
-    public float startDashTime;
-    private int direction;
-    public int dashCounter;
-    public float timer;
-
-
-	void Start () {
-        rb = GetComponent<Rigidbody2D>();
-        dashTime = startDashTime;
-        dashCounter = 0;
-
-    }
-	
-
-	void Update () {
->>>>>>> Stashed changes
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
