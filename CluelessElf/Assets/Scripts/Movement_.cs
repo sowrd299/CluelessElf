@@ -26,12 +26,7 @@ public class Movement_ : MonoBehaviour
 
     void Update()
     {
-        
 
-        print("current:");
-        print(_speed);
-        print("original:");
-        print(_original_speed);
         
 
         if (_defendstate != true){
