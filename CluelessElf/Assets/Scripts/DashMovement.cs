@@ -11,6 +11,8 @@ public class DashMovement : MonoBehaviour {
     private bool direction;
     public int dashCounter;
     public float timer;
+    private Vector2 newspeed;
+    public float fraction;
     Vector2 mdirection;
 
 
@@ -25,6 +27,7 @@ public class DashMovement : MonoBehaviour {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
+
         if (true) {
             if (direction == false)
             {
@@ -33,6 +36,7 @@ public class DashMovement : MonoBehaviour {
                     direction = true;
                     dashCounter += 1;
                     mdirection = new Vector2(moveX, moveY);
+                    newspeed = rb.velocity;
                 }
             }
             else
@@ -41,7 +45,7 @@ public class DashMovement : MonoBehaviour {
                 {
                     direction = false;
                     dashTime = startDashTime;
-                    rb.velocity = Vector2.zero;
+                    rb.velocity = newspeed + fraction * mdirection * dashspeed;
                 }
                 else
                 {
