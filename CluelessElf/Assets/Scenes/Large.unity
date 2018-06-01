@@ -284,6 +284,7 @@ MonoBehaviour:
   startDashTime: 0.2
   dashCounter: 0
   timer: 0
+  fraction: 0.25
 --- !u!58 &136281468
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &136281470
 MonoBehaviour:
   m_ObjectHideFlags: 0
