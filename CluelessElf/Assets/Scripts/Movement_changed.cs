@@ -45,7 +45,7 @@ public class Movement_changed : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
         Vector2 realmovement = new Vector2(moveX, moveY);
-	realmovement.Normalize();
+	    realmovement.Normalize();
         rb2d.AddForce(realmovement * _speed);
     }
 }
