@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
+
 
 public class movingEnemy : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class movingEnemy : MonoBehaviour
     public int deltaHealth;
     public float speed;
     public GameObject[] targ;
+
 
     //transform.position
     // Use this for initialization
@@ -29,6 +32,8 @@ public class movingEnemy : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Enemy bounces player back");
+            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+
             other.rigidbody.AddForce(multiplier * (other.rigidbody.position - force), ForceMode2D.Impulse);
             health -= deltaHealth;
             if (health <= 0)
