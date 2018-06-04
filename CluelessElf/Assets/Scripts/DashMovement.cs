@@ -14,7 +14,7 @@ public class DashMovement : MonoBehaviour {
     private Vector2 newspeed;
     public float fraction;
     Vector2 mdirection;
-
+    public GameObject dashEffect;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -36,7 +36,10 @@ public class DashMovement : MonoBehaviour {
                     direction = true;
                     dashCounter += 1;
                     mdirection = new Vector2(moveX, moveY);
+                    Instantiate(dashEffect, transform.position, new Quaternion(180,0,0,1));
                     newspeed = rb.velocity;
+
+
                 }
             }
             else
