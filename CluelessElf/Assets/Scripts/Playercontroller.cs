@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EZCameraShake;
+
 
 public class Playercontroller : MonoBehaviour {
 
@@ -19,7 +19,7 @@ public class Playercontroller : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.X))
         {
             swordattack.SetTrigger("attack");
-            CameraShaker.Instance.ShakeOnce(4f,4f,.1f,1f);
+       
         }
             
 
