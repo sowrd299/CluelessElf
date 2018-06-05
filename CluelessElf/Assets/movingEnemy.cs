@@ -35,6 +35,11 @@ public class movingEnemy : MonoBehaviour
             CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
 
             other.rigidbody.AddForce(multiplier * (other.rigidbody.position - force), ForceMode2D.Impulse);
+        }
+
+        if (other.gameObject.tag == "Sword")
+        {
+            Debug.Log("Enemy be attacked");
             health -= deltaHealth;
             if (health <= 0)
             {
@@ -46,10 +51,6 @@ public class movingEnemy : MonoBehaviour
 
     }
 
-    /*void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("OnTriggerEnter2D used");
-    }*/
 
     // Update is called once per frame
     void Update()

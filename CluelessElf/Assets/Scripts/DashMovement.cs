@@ -20,6 +20,7 @@ public class DashMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         dashTime = startDashTime;
         dashCounter = 0;
+        direction = false;
     }
 	
 
@@ -28,39 +29,36 @@ public class DashMovement : MonoBehaviour {
         float moveY = Input.GetAxis("Vertical");
 
 
-        if (true) {
-            if (direction == false)
+        
+        if (direction == false)
+        {
+            mdirection = new Vector2(moveX, moveY);
+            if (Input.GetKeyDown(KeyCode.LeftShift) && dashCounter < 2 && mdirection != new Vector2(0, 0))
             {
-                if (Input.GetKeyDown(KeyCode.LeftShift) && dashCounter < 3)
-                {
-                    direction = true;
-                    dashCounter += 1;
-                    mdirection = new Vector2(moveX, moveY);
-                    Instantiate(dashEffect, transform.position, new Quaternion(180,0,0,1));
-                    newspeed = rb.velocity;
-
-
-                }
+                direction = true;
+                dashCounter += 1;
+                Instantiate(dashEffect, transform.position, new Quaternion(180, 0, 0, 1));
+                newspeed = rb.velocity;
+            }
+        }
+        else
+        {
+            if (dashTime <= 0)
+            {
+                direction = false;
+                dashTime = startDashTime;
+                rb.velocity = newspeed + fraction * mdirection * dashspeed;
             }
             else
             {
-                if (dashTime <= 0)
+                dashTime -= Time.deltaTime;
+                if (direction == true)
                 {
-                    direction = false;
-                    dashTime = startDashTime;
-                    rb.velocity = newspeed + fraction * mdirection * dashspeed;
-                }
-                else
-                {
-                    dashTime -= Time.deltaTime;
-
-                    if (direction == true)
-                    {
-                        rb.velocity = mdirection * dashspeed;
-                    }
+                    rb.velocity = mdirection * dashspeed;
                 }
             }
         }
+        
 
 
         

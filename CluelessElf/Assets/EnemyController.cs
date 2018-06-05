@@ -26,7 +26,13 @@ public class EnemyController : MonoBehaviour {
             Debug.Log("Enemy bounces player back");
             other.rigidbody.AddForce(multiplier * (other.rigidbody.position - force), ForceMode2D.Impulse);
             health -= deltaHealth;
-            if(health <= 0)
+            
+        }
+        if (other.gameObject.tag == "Sword")
+        {
+            Debug.Log("Enemy be attacked");
+            health -= deltaHealth;
+            if (health <= 0)
             {
                 Destroy(GetComponent<SpriteRenderer>());
                 Destroy(GetComponent<CircleCollider2D>());
@@ -36,16 +42,6 @@ public class EnemyController : MonoBehaviour {
 
     }
 
-    /*void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("OnTriggerEnter2D used");
-    }*/
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
 
 
