@@ -26,31 +26,36 @@ public class movingEnemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("OnCollisionEnter2D used");
+       
 
         //test if player youches me
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Enemy bounces player back");
+            Debug.Log("movingEnemy bounces player back");
             CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-
             other.rigidbody.AddForce(multiplier * (other.rigidbody.position - force), ForceMode2D.Impulse);
         }
 
-        if (other.gameObject.tag == "Sword")
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("OnTriggerStay2D used");
+        if (other.name == "DamageArea" && Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("Enemy be attacked");
             health -= deltaHealth;
             if (health <= 0)
             {
-                Destroy(GetComponent<SpriteRenderer>());
-                Destroy(GetComponent<CircleCollider2D>());
+                Destroy(gameObject);
+                //Destroy(GetComponent<SpriteRenderer>());
+                Debug.Log("End");
+                //Destroy(GetComponent<CircleCollider2D>());
             }
         }
 
 
     }
-
 
     // Update is called once per frame
     void Update()

@@ -18,24 +18,31 @@ public class EnemyController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("OnCollisionEnter2D used");
+        
+
 
         //test if player youches me
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Debug.Log("Enemy bounces player back");
             other.rigidbody.AddForce(multiplier * (other.rigidbody.position - force), ForceMode2D.Impulse);
-            health -= deltaHealth;
-            
+
         }
-        if (other.gameObject.tag == "Sword")
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("OnTriggerStay2D used");
+
+        if (other.name == "DamageArea" && Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("Enemy be attacked");
             health -= deltaHealth;
             if (health <= 0)
             {
-                Destroy(GetComponent<SpriteRenderer>());
-                Destroy(GetComponent<CircleCollider2D>());
+                Debug.Log("End");
+                Destroy(gameObject);
+                //Destroy(GetComponent<CircleCollider2D>());
             }
         }
 
