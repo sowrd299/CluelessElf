@@ -14,6 +14,7 @@ public class movingEnemy : MonoBehaviour
     public int deltaHealth;
     public float speed;
     public GameObject[] targ;
+  
 
 
     //transform.position
@@ -47,7 +48,7 @@ public class movingEnemy : MonoBehaviour
             health -= deltaHealth;
             if (health <= 0)
             {
-                Destroy(gameObject);
+                Destroy(gameObject,.25f);
                 //Destroy(GetComponent<SpriteRenderer>());
                 Debug.Log("End");
                 //Destroy(GetComponent<CircleCollider2D>());

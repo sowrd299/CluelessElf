@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour {
             if (health <= 0)
             {
                 Debug.Log("End");
-                Destroy(gameObject);
+                Destroy(gameObject,.25f);
                 //Destroy(GetComponent<CircleCollider2D>());
             }
         }
