@@ -14,7 +14,7 @@ public class movingEnemy : MonoBehaviour
     public int deltaHealth;
     public float speed;
     public GameObject[] targ;
-  
+    public AudioClip deathSFX;
 
 
     //transform.position
@@ -52,6 +52,7 @@ public class movingEnemy : MonoBehaviour
                 //Destroy(GetComponent<SpriteRenderer>());
                 Debug.Log("End");
                 //Destroy(GetComponent<CircleCollider2D>());
+                AudioSource.PlayClipAtPoint(deathSFX, transform.position, 0.8f);
             }
         }
 

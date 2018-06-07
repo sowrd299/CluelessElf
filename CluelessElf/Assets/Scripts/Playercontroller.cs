@@ -20,7 +20,7 @@ public class Playercontroller : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.X))
         {
             swordattack.SetTrigger("attack");
-            AudioSource.PlayClipAtPoint(swordSFX, transform.position);
+            AudioSource.PlayClipAtPoint(swordSFX, transform.position, 0.8f);
        
         }
             

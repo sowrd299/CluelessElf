@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
     public int multiplier;
     public int health;
     public int deltaHealth;
+    public AudioClip deathSound;
     //transform.position
     // Use this for initialization
     void Start()
@@ -44,6 +45,8 @@ public class EnemyController : MonoBehaviour {
             {
                 Debug.Log("End");
                 Destroy(gameObject,.25f);
+                AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.8f);
+                
                 //Destroy(GetComponent<CircleCollider2D>());
             }
         }
