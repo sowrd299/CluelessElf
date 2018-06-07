@@ -47,6 +47,9 @@ TagManager:
   - name: Ice
     uniqueID: 2870087509
     locked: 0
+  - name: Spawner
+    uniqueID: 4289716163
+    locked: 0
   - name: Enemy
     uniqueID: 2002028501
     locked: 0

@@ -94,7 +94,7 @@ MonoBehaviour:
   multiplier: 2
   health: 5
   deltaHealth: 5
-  speed: 0.03
+  speed: 0.1
   targ: []
 --- !u!212 &212087491421921210
 SpriteRenderer:
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2002028501
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a7c1160350769464482b2d7a8240881f, type: 3}
   m_Color: {r: 0.6415094, g: 0.499288, b: 0.54140365, a: 1}
