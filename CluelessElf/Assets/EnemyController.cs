@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class EnemyController : MonoBehaviour {
 
@@ -25,6 +26,7 @@ public class EnemyController : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Enemy bounces player back");
+            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             other.rigidbody.AddForce(multiplier * (other.rigidbody.position - force), ForceMode2D.Impulse);
 
         }
