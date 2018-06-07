@@ -15,6 +15,7 @@ public class DashMovement : MonoBehaviour {
     public float fraction;
     Vector2 mdirection;
     public GameObject dashEffect;
+    public AudioClip dashSFX;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +40,7 @@ public class DashMovement : MonoBehaviour {
                 dashCounter += 1;
                 Instantiate(dashEffect, transform.position, new Quaternion(180, 0, 0, 1));
                 newspeed = rb.velocity;
+                AudioSource.PlayClipAtPoint(dashSFX, transform.position);
             }
         }
         else

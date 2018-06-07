@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 136281471}
   - component: {fileID: 136281470}
   - component: {fileID: 136281474}
+  - component: {fileID: 136281475}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -288,6 +289,7 @@ MonoBehaviour:
   timer: 0
   fraction: 0.25
   dashEffect: {fileID: 1244431106381104, guid: 10ab88b31a20f134e96b2b737307a80b, type: 2}
+  dashSFX: {fileID: 8300000, guid: 9f11282a197c07842b175848fc2bd05b, type: 3}
 --- !u!58 &136281468
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -377,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c790c3cdea72f9349b56a3f092de8321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordSFX: {fileID: 8300000, guid: 6d566ff078cbb1a4589efe5cd58ffb6f, type: 3}
 --- !u!114 &136281474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +391,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c33747a522e0b478b6b96bfd62bc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &136281475
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136281464}
+  m_Enabled: 1
 --- !u!1 &229458248
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +423,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 229458248}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &229458250
 Behaviour:
   m_ObjectHideFlags: 0

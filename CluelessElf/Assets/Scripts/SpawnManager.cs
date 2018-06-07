@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour {
 	
     void Spawn()
     {
-        GameObject.Instantiate(mEnemy, new Vector2(Random.Range(-45.0f, 45.0f), Random.Range(-45.0f, 45.0f)), Quaternion.identity);
+        GameObject.Instantiate(mEnemy, new Vector2(Random.Range(-40.0f, 40.0f), Random.Range(-40.0f, 40.0f)), Quaternion.identity);
     }
 	// Update is called once per frame
 	void Update () {
