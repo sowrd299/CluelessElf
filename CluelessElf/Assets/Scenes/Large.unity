@@ -871,6 +871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018039034}
   - component: {fileID: 1018039033}
+  - component: {fileID: 1018039035}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -889,7 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d72a005015a01847841b3264f67fd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 3
+  spawnTime: 4
   mEnemy: {fileID: 1300889345043474, guid: 4f448cebc5158c546ad058243fbc5ec8, type: 2}
 --- !u!4 &1018039034
 Transform:
@@ -904,6 +905,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018039035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1018039032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d72a005015a01847841b3264f67fd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTime: 5
+  mEnemy: {fileID: 1871164031773246, guid: 511f465dd7a2d744abe6579039bc37ad, type: 2}
 --- !u!1001 &1177899425
 Prefab:
   m_ObjectHideFlags: 0
